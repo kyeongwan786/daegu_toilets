@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/styles/common.css">
+    <link rel="stylesheet" href="./assets/styles/index.css">
+    <script src="./assets/scripts/data.js"></script>
+    <script defer src="./assets/scripts/index.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d4d42547bb98aba4a01379af27de88d"></script>
+    <title>급똥 - 화장실 찾기 앱</title>
+</head>
+<body>
+<div id="map-container">
+    <header class="app-header">
+        <h1 class="app-title">급똥</h1>
+    </header>
+
+    <div class="control-buttons">
+        <div class="control-button toilet-finder">
+            <button class="icon-button" type="button">
+                <img src="./assets/images/icons8-toilet-100.png" alt="화장실 아이콘" class="button-icon">
+                <span class="button-text">근처 화장실 찾기</span>
+            </button>
+        </div>
+        <div class="control-button location-finder">
+            <button class="icon-button" type="button">
+                <img src="./assets/images/icons8-location-48.png" alt="위치 아이콘" class="button-icon">
+                <span class="button-text">내 위치 불러오기</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="info-panel"></div>
+</div>
+</body>
+</html>
