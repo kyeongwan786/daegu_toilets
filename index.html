@@ -34,7 +34,27 @@
 
     <div id="map"></div>
 
-    <div class="info-panel"></div>
+    <div class="info-panel">
+        <div class="toilets-header">주변 화장실</div>
+        <div class="toilet-item selected">
+            <div class="item-header">
+                <h3 class="item-name">공원 화장실</h3>
+                <span class="item-time">5분</span>
+            </div>
+            <p class="item-address">대구 서구 달서로17길24</p>
+            <div class="item-info">
+                <span>24시간 운영</span>
+                <span>장애인 화장실 있음</span>
+            </div>
+            <button class="navigation-button">
+                <img src="./assets/images/go.png" alt="네비게이션 아이콘">
+                길찾기
+            </button>
+        </div>
+        <div class="no-toilets" style="display: none;">
+            주변에 화장실이 없습니다.
+        </div>
+    </div>
 </div>
 </body>
 </html>
