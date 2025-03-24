@@ -69,6 +69,7 @@
     box-shadow: 0 0.25rem 1rem #0000001F;
     z-index: 10;
     overflow-y: auto;
+    max-height: 50vh;
 }
 .toilet-item {
     padding: 1rem;
