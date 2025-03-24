@@ -9,10 +9,7 @@ const mapInstance = new kakao.maps.Map($mapElement, {
     level: 3
 });
 
-let currentLat;
-let currentLon;
-let currentPosition;
-let currentMarker;
+
 
 const currentInfoWindow = new kakao.maps.InfoWindow({
     content: '<div style="width: 4rem; padding: 0.5rem 0; text-align: center;">현재 위치</div>'
@@ -21,6 +18,10 @@ const toiletInfoWindow = new kakao.maps.InfoWindow({
     content: '<div style="width: 4rem; padding: 0.5rem 0; text-align: center;">화장실</div>'
 });
 
+let currentLat;
+let currentLon;
+let currentPosition;
+let currentMarker;
 
 const nowPosition = () => {
     if (navigator.geolocation) {
@@ -42,4 +43,33 @@ const nowPosition = () => {
         });
     }
 };
+
+let toiletMarkers = [];
+const findToilets = () => {
+  toiletMarkers.forEach(marker => marker.setMap(null));
+    toiletMarkers = [];
+
+    if (!currentMarker) {
+        nowPosition();
+        return;
+    }
+    const filterToilets = toilets.filter(data => data['C0'] !== "번호");
+    for (const toilet of toilets) {
+        const lat = parseFloat(toilet['C20']);
+        const lon = parseFloat(toilet['C21']);
+
+        if (isNaN(lat) || isNaN(lon)) continue;
+
+        const position = new kakao.maps.LatLng(lat, lon);
+        const marker = new kakao.maps.Marker({
+           map: mapInstance,
+           position: position
+        });
+
+        toiletMarkers.push(marker);
+    }
+};
+
+
+
 
